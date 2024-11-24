@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מרכז תמיכה טכנולוגי - התחברות</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <!-- תפריט ראשי -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">דף הבית</a></li>
+            <li><a href="faq.html">שאלות נפוצות</a></li>
+            <li><a href="about.html">מי אנחנו</a></li>
+            <li id="authNav"></li>
+        </ul>
+    </nav>
+
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-tabs">
+                <button class="auth-tab active" onclick="switchTab('login')">התחברות</button>
+                <button class="auth-tab" onclick="switchTab('register')">הרשמה</button>
+            </div>
+
+            <!-- טופס התחברות -->
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">אימייל</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">סיסמה</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="auth-button">התחבר</button>
+                <a href="#" class="forgot-password">שכחת סיסמה?</a>
+            </form>
+
+            <!-- טופס הרשמה -->
+            <form id="registerForm" class="auth-form" style="display: none;">
+                <div class="form-group">
+                    <label for="registerName">שם מלא</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">אימייל</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">סיסמה</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPasswordConfirm">אימות סיסמה</label>
+                    <input type="password" id="registerPasswordConfirm" required>
+                </div>
+                <button type="submit" class="auth-button">הרשם</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- סקריפטים -->
+    <script src="js/auth.js"></script>
+    <script>
+        function switchTab(tabName) {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const tabs = document.querySelectorAll('.auth-tab');
+
+            if (tabName === 'login') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+                tabs[0].classList.add('active');
+                tabs[1].classList.remove('active');
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                tabs[0].classList.remove('active');
+                tabs[1].classList.add('active');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // בדיקה אם המשתמש כבר מחובר
+            if (authService.isAuthenticated()) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            // אתחול התפריט
+            const authNav = document.getElementById('authNav');
+            if (authNav) {
+                authNav.innerHTML = '<a href="login.html" class="active">התחברות</a>';
+            }
+        });
+    </script>
+</body>
+</html> 

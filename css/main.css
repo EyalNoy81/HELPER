@@ -1,0 +1,667 @@
+/* Reset ועיצוב בסיסי */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #1a1a1a;
+    color: #fff;
+    direction: rtl;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* תפריט ניווט */
+.main-nav {
+    background: rgba(26, 26, 26, 0.95);
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: center;
+}
+
+.main-nav li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* סגנון בסיסי לכל הקישורים בתפריט */
+.main-nav a,
+#authNav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* אפקט hover אחיד לכל הקישורים */
+.main-nav a:hover:not(.active),
+#authNav a:hover:not(.active) {
+    background: #2196F3;
+    
+}
+
+/* כפתור פעיל */
+.main-nav a.active,
+#authNav a.active {
+    background: #2196F3;
+    color: #fff;
+}
+
+/* מבנה דף בסיסי */
+.page-layout {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 20px;
+    position: relative;
+}
+
+/* עיצוב תיבות הצד */
+.side-frames {
+    width: 15%;  /* רוחב קבוע של 15% */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+}
+
+.frame-box {
+    background: #2d2d2d;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+    aspect-ratio: 1;  /* שמירה על יחס ריבועי */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.frame-box:hover {
+    transform: translateY(-2px);
+}
+
+.frame-box img {
+    width: 80%;    /* גודל יחסי לתיבה */
+    height: 80%;   /* גודל יחסי לתיבה */
+    object-fit: cover;
+}
+
+.frame-box h3,
+.frame-box p {
+    display: none;
+}
+
+/* מיכל בסיסי */
+.container {
+    flex: 1;
+    background: #2d2d2d;
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+/* סגנונות ספציפיים לדף הבית */
+.home-container {
+    max-width: 1200px;
+    margin: 0;
+}
+
+.welcome-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.welcome-section h1 {
+    color: #2196F3;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.personal-help {
+    text-align: center;
+    margin: 20px auto;
+    width: 50%;
+}
+
+.personal-help textarea {
+    width: 100%;
+    height: 4.5em;
+    min-height: 4.5em;
+    max-height: 4.5em;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    margin: 10px 0;
+    resize: none;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 1em;
+}
+
+.personal-help button {
+    background: #2196F3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1em;
+}
+
+.personal-help button:hover {
+    background: #1976D2;
+}
+
+/* מצגת תמונות */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    margin: 20px 0 0 0;
+    overflow: hidden;
+    background: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    /* נוסיף display: flex כדי למרכז את התוכן */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slides {
+    width: 90%; /* שינוי מ-100% ל-90% */
+    height: 90%; /* שינוי מ-100% ל-90% */
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* שינוי מ-cover ל-contain */
+    display: none;
+}
+
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(33, 150, 243, 0.7);
+    color: white;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    transition: background-color 0.3s;
+}
+
+.slide-btn:hover {
+    background: rgba(33, 150, 243, 0.9);
+}
+
+.prev { left: 0; border-radius: 0 4px 4px 0; }
+.next { right: 0; border-radius: 4px 0 0 4px; }
+
+/* סגנונות ספציפיים לדף שאלות נפוצות */
+.faq-container {
+    max-width: 1200px;
+    margin: 0;
+}
+
+.circles-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #2d2d2d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.circle img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.circle span {
+    color: #fff;
+    font-size: 1em;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px 0;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.circle:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+}
+
+.circle:hover img {
+    transform: scale(1.1);
+}
+
+.circle:hover span {
+    opacity: 1;
+}
+
+/* צבעי רקע ספציפיים לכל עיגול (אופציונלי) */
+.email-circle {
+    background: linear-gradient(145deg, #2196F3, #1976D2);
+}
+
+.whatsapp-circle {
+    background: linear-gradient(145deg, #25D366, #128C7E);
+}
+
+.facebook-circle {
+    background: linear-gradient(145deg, #4267B2, #3B5998);
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 768px) {
+    .circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .circle span {
+        font-size: 0.9em;
+        bottom: 15px;
+    }
+}
+
+/* סגנונות ספציפיים לדף אודות */
+.about-layout {
+    justify-content: center;
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.team-section {
+    margin: 20px auto;
+    text-align: center;
+    max-width: 1000px;
+}
+
+.team-section h2 {
+    margin-bottom: 20px;
+    color: #2196F3;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.team-member {
+    width: 250px;
+    background: #2d2d2d;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.member-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #2196F3;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;  /* אפקט הגדלה בהובר */
+}
+
+.member-avatar:hover {
+    transform: scale(1.05);  /* הגדלה קלה במעבר עכבר */
+}
+
+.team-member h3 {
+    color: #2196F3;
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.team-member p {
+    color: #bbb;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* רספונסיביות */
+@media (max-width: 1400px) {
+    .frame-box {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .side-frames {
+        width: 100px;
+    }
+    
+    .frame-box {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .side-frames {
+        display: none;
+    }
+    
+    .page-layout {
+        padding: 0 10px;
+    }
+    
+    .container {
+        margin: 0 10px;
+    }
+    
+    .personal-help {
+        width: 90%;
+    }
+    
+    .slideshow-container {
+        height: 40vh;
+    }
+    
+    .main-nav ul {
+        gap: 20px;
+    }
+    
+    .main-nav a {
+        padding: 8px 16px;
+        font-size: 1em;
+    }
+    
+    .circle {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .team-grid {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .team-grid {
+        flex-direction: column;
+    }
+    
+    .team-member {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .circle {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* סגנונות נוספים לדף FAQ */
+.faq-sections {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-category {
+    background: rgb(70, 65, 65);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.question {
+    background: #2d2d2d;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    
+    transition: background 0.3s ease;
+}
+
+.question:hover {
+    background: #2196F3;;
+}
+
+.question::after {
+    content: '▼';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #2196F3;
+    background: #e9ecef;
+}
+
+.answer {
+    padding: 15px;
+    display: none;
+    padding: 15px;
+    margin-top: 10px;
+    background: #1a1a1a;
+    border-radius: 8px;
+    border-right: 4px solid #2196F3;
+    line-height: 1.6;
+}
+
+/* עיצוב ייחודי לכל קטגוריה */
+#email.faq-category {
+    border-right: 4px solid #2196F3;
+}
+
+#whatsapp.faq-category {
+    border-right: 4px solid #4CAF50;
+}
+
+#facebook.faq-category {
+    border-right: 4px solid #3b5998;
+}
+
+/* עיצוב העיגולים לפי קטגוריה */
+.circle[onclick*="email"] {
+    background: linear-gradient(145deg, #1976D2, #2196F3);
+}
+
+.circle[onclick*="whatsapp"] {
+    background: linear-gradient(145deg, #388E3C, #4CAF50);
+}
+
+.circle[onclick*="facebook"] {
+    background: linear-gradient(145deg, #2f477a, #3b5998);
+}
+
+/* הוספת אפקט hover לעיגולים */
+.circle[onclick*="email"]:hover {
+    box-shadow: 0 0 15px rgba(33, 150, 243, 0.4);
+}
+
+.circle[onclick*="whatsapp"]:hover {
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.4);
+}
+
+.circle[onclick*="facebook"]:hover {
+    box-shadow: 0 0 15px rgba(59, 89, 152, 0.4);
+}
+
+/* עיצוב תפריט משתמש */
+#authNav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#authNav a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* רק בדף ההתחברות הכפתור יהיה מואר */
+#authNav a:not(.active) {
+    background: transparent;
+}
+
+#authNav a:hover {
+    background: rgba(33, 150, 243, 0.1);
+}
+
+/* עיצוב מיוחד כשנמצאים בדף התחברות */
+#authNav a.active {
+    background: #2196F3;
+    border-radius: 5px;
+}
+
+.user-menu {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-name {
+    color: #fff;
+    font-size: 0.9em;
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 768px) {
+    .user-menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    #authNav {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* עיצוב תפריט משתמש מחובר */
+.user-menu {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-name {
+    color: #fff;
+    font-size: 0.9em;
+}
+
+/* מרווח בין פריטי התפריט */
+.main-nav li:not(:last-child) {
+    margin-left: 10px;
+}
+
+/* עיצוב העיגולים */
+.circle {
+    cursor: pointer;
+    position: relative;
+}
+
+.circle.active {
+    background: #2196F3;
+}
+
+/* שיפור תצוגה במסכים קטנים */
+@media (max-width: 768px) {
+    .member-avatar {
+        width: 120px;
+        height: 120px;
+    }
+}

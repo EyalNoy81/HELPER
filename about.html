@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מרכז תמיכה טכנולוגי - מי אנחנו</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- תפריט ראשי -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">דף הבית</a></li>
+            <li><a href="faq.html">שאלות נפוצות</a></li>
+            <li><a href="about.html" class="active">מי אנחנו</a></li>
+            <li id="authNav"></li>
+        </ul>
+    </nav>
+
+    <!-- מיכל מרכזי ללא תיבות צד -->
+    <div class="page-layout about-layout">
+        <div class="container about-container">
+            <div class="welcome-section">
+                <h1>מי אנחנו</h1>
+                <p>הכירו את הצוות המקצועי שלנו</p>
+            </div>
+
+            <div class="about-content">
+                <section class="about-section">
+                    <h2>החזון שלנו</h2>
+                    <p>אנחנו מאמינים שטכנולוגיה צריכה להיות נגישה לכולם. המטרה שלנו היא לספק תמיכה ועזרה בצורה פשוטה וידידותית.</p>
+                </section>
+
+            <section class="team-section">
+             <h2>הצוות שלנו</h2>
+             <div class="team-grid">
+                <div class="team-member">
+                  <img src="assets/images/yossi.png" alt="יוסי המומחה" class="member-avatar">
+                  <h3>יוסי המומחה</h3>
+                  <p>מומחה לפתרונות דואר אלקטרוני ורשתות חברתיות</p>
+                </div>
+             <div class="team-member">
+                <img src="assets/images/ronit.png" alt="רונית הטכנולוגית" class="member-avatar">
+                <h3>רונית הטכנולוגית</h3>
+                <p>מומחית לאפליקציות מובייל ותקשורת</p>
+             </div>
+             <div class="team-member">
+                <img src="assets/images/danny.png" alt="דני הגאון" class="member-avatar">
+                <h3>דני הגאון</h3>
+                <p>מומחה לאבטחת מידע ופרטיות ברשת</p>
+            </div>
+          </div>
+            </section>
+
+                <section class="contact-section">
+                    <h2>צרו קשר</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="icon-phone"></i>
+                            <p>טלפון: 03-1234567</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="icon-email"></i>
+                            <p>אימייל: support@techhelp.co.il</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="icon-location"></i>
+                            <p>כתובת: רחוב הטכנולוגיה 1, תל אביב</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="js/auth.js"></script>
+    <script type="text/javascript">
+       function initApp() {
+           initAuthState();
+       }
+        function initAuthState() {
+           const authNav = document.getElementById('authNav');
+           if (authService.isAuthenticated()) {
+               const user = authService.getCurrentUser();
+               authNav.innerHTML = `
+                   <div class="user-menu">
+                       <span class="user-name">שלום, ${user?.name || 'משתמש'}</span>
+                       <a href="#" onclick="authService.logout(); return false;">התנתק</a>
+                   </div>
+               `;
+           } else {
+               authNav.innerHTML = '<a href="login.html">התחברות</a>';
+           }
+       }
+        if (document.readyState === 'loading') {
+           document.addEventListener('DOMContentLoaded', initApp);
+       } else {
+           initApp();
+       }
+    </script>
+    </body>
+    </html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html dir"rtl" lang="he">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>מרכז תמיכה טכנולוגי - שאלות נפוצות</title>
+   <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+   <nav class="main-nav">
+       <ul>
+           <li><a href="index.html">דף הבית</a></li>
+           <li><a href="faq.html" class="active">שאלות נפוצות</a></li>
+           <li><a href="about.html">מי אנחנו</a></li>
+           <li><a href="login.html">התחברות</a></li>
+           <li id="authNav"></li>
+       </ul>
+   </nav>
+   <div class="page-layout">
+    <!-- תיבות צד ימין -->
+    <div class="side-frames right-frames">
+        <div class="frame-box">
+            <img src="assets/images/1.png" alt="1">
+        </div>
+        <div class="frame-box">
+            <img src="assets/images/1.png" alt="Youtube">
+        </div>
+        <div class="frame-box">
+            <img src="assets/images/3.png" alt="מיילים">
+        </div>
+        <div class="frame-box">
+            <img src="assets/images/2.png" alt="אינסטוש">
+        </div>
+    </div>
+        <div class="container faq-container">
+           <div class="welcome-section">
+               <h1>שאלות נפוצות</h1>
+               <p>בחר/י את הנושא המבוקש לקבלת מידע ופתרונות</p>
+           </div>
+            <div class="faq-content">
+               <div class="circles-container">
+                   <div class="circle" data-category="email">
+                       <img src="assets/images/email-icon.png" alt="דואר אלקטרוני">
+                       <span>דואר אלקטרוני</span>
+                   </div>
+                   <div class="circle" data-category="whatsapp">
+                       <img src="assets/images/whatsapp-icon.png" alt="וואטסאפ">
+                       <span>וואטסאפ</span>
+                   </div>
+                   <div class="circle" data-category="facebook">
+                       <img src="assets/images/facebook-icon.png" alt="פייסבוק">
+                       <span>פייסבוק</span>
+                   </div>
+               </div>
+               <div class="faq-sections">
+                <!-- קטגוריית אימייל -->
+                <div id="email" class="faq-category">
+                    <h2>שאלות נפוצות - דואר אלקטרוני</h2>
+                    <div class="faq-item">
+                        <div class="question">איך מגדירים חשבון דואר חדש?</div>
+                        <div class="answer">
+                            1. פתח את אפליקציית הדואר<br>
+                            2. לחץ על "הוסף חשבון"<br>
+                            3. הכנס את כתובת המייל והסיסמה<br>
+                            4. עקוב אחר ההוראות להשלמת ההגדרה
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">איך משחזרים סיסמה לחשבון דואר?</div>
+                        <div class="answer">
+                            1. לחץ על "שכחתי סיסמה" בדף ההתחברות<br>
+                            2. הזן את כתובת המייל שלך<br>
+                            3. בדוק את תיבת הדואר החלופית<br>
+                            4. עקוב אחר ההוראות בהודעה שקיבלת
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">כיצד מגדירים חתימה אוטומטית?</div>
+                        <div class="answer">
+                            1. פתח הגדרות<br>
+                            2. בחר ב"חתימה"<br>
+                            3. הכנס את הטקסט הרצוי<br>
+                            4. שמור את השינויים
+                        </div>
+                    </div>
+                </div>
+                 <!-- קטגוריית וואטסאפ -->
+                <div id="whatsapp" class="faq-category">
+                    <h2>שאלות נפוצות - וואטסאפ</h2>
+                    <div class="faq-item">
+                        <div class="question">איך מגבים הודעות בוואטסאפ?</div>
+                        <div class="answer">
+                            פתח הגדרות > צ'אטים > גיבוי צ'אטים > גבה עכשיו. 
+                            הגיבוי יישמר בענן או במכשיר.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">איך משתמשים בוואטסאפ ווב?</div>
+                        <div class="answer">
+                            1. היכנס ל-web.whatsapp.com<br>
+                            2. פתח את וואטסאפ בטלפון<br>
+                            3. סרוק את הקוד QR<br>
+                            4. המכשיר יחובר אוטומטית
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">כיצד מפעילים אימות דו-שלבי?</div>
+                        <div class="answer">
+                            1. פתח הגדרות<br>
+                            2. בחר "חשבון" > "אבטחה"<br>
+                            3. הפעל אימות דו-שלבי<br>
+                            4. הגדר קוד PIN
+                        </div>
+                    </div>
+                </div>
+                 <!-- קטגוריית פייסבוק -->
+                <div id="facebook" class="faq-category">
+                    <h2>שאלות נפוצות - פייסבוק</h2>
+                    <div class="faq-item">
+                        <div class="question">איך משנים סיסמה בפייסבוק?</div>
+                        <div class="answer">
+                            היכנס להגדרות > אבטחה והתחברות > שנה סיסמה. 
+                            תצטרך לאמת את זהותך לפני השינוי.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">כיצד מגבילים את חשיפת הפרופיל?</div>
+                        <div class="answer">
+                            1. פתח הגדרות פרטיות<br>
+                            2. בחר "מי יכול לראות את התוכן שלי"<br>
+                            3. התאם את ההגדרות לפי העדפותיך<br>
+                            4. שמור שינויים
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="question">איך מדווחים על תוכן פוגעני?</div>
+                        <div class="answer">
+                            1. לחץ על שלוש הנקודות ליד הפוסט<br>
+                            2. בחר "דווח על פוסט"<br>
+                            3. בחר את סיבת הדיווח<br>
+                            4. שלח את הדיווח
+                        </div>
+                    </div>
+                </div>
+            </div>
+           </div>
+       </div>
+       <div class="side-frames left-frames">
+        <div class="frame-box">
+            <iframe src="https://giphy.com/embed/DRinNvjCXc5Iexx0CH" width="480" height="480"  frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/socialbakers-social-media-whatsapp-logo-DRinNvjCXc5Iexx0CH">via GIPHY</a></p>
+        </div>
+        <div class="frame-box">
+            <iframe src="https://giphy.com/embed/YwNCU8P5jGMNKGG5Bq" width="480" height="480"  frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/socialbakers-instagram-logo-YwNCU8P5jGMNKGG5Bq">via GIPHY</a></p>
+        </div>
+        <div class="frame-box">
+            <iframe src="https://giphy.com/embed/ijEiXYEo9DBxm" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/arne-van-kauter-ijEiXYEo9DBxm">via GIPHY</a></p>
+        </div>
+        <div class="frame-box">
+            <iframe src="https://giphy.com/embed/aOften89vRbG" width="480" height="480"  frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/deal-with-it-sunglasses-email-aOften89vRbG">via GIPHY</a></p>
+        </div>
+    </div>
+
+</div>
+    <script src="js/auth.js"></script>
+   <script src="js/faq.js"></script>
+/body>
+/html>
